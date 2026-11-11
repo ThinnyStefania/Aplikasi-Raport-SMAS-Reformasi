@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-Rapor Wali Kelas</title>
+  <!-- Ikon (Font Awesome Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== BAR ATAS ===== -->
+  <header class="topbar noprint">
+    <button class="burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    <div class="brand">
+      <div class="logo"><i class="fa-solid fa-graduation-cap"></i></div>
+      <span id="brandText">E-RAPOR</span>
+    </div>
+    <div class="school">
+      <i class="fa-solid fa-school"></i>
+      <span id="schoolName">Nama Sekolah</span>
+    </div>
+    <div class="period">
+      <span>Tahun Pelajaran</span><b id="hdrYear">2025/2026</b>
+      <select id="semPick" title="Ganti semester">
+        <option value="1">I (Ganjil)</option>
+        <option value="2">II (Genap)</option>
+      </select>
+    </div>
+    <div class="spacer"></div>
+    <div class="savestate" id="saveState"><i class="fa-solid fa-circle-check"></i> Tersimpan</div>
+    <button class="fs-btn" id="fsBtn" title="Layar penuh">
+      <i class="fa-solid fa-expand"></i><small>Layar Penuh</small>
+    </button>
+    <button class="fs-btn" id="fsBtn2" title="Layar penuh"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+  </header>
+
+  <div class="shell">
+    <!-- ===== MENU SAMPING ===== -->
+    <aside class="sidebar noprint" id="sidebar">
+      <div class="userbox">
+        <div class="role" id="userRole">Guru Mapel</div>
+        <div class="uname" id="userName">Nama Guru</div>
+        <div class="unip" id="userNip">NIP/</div>
+      </div>
+      <nav id="nav"></nav>
+    </aside>
+    <div class="backdrop noprint" id="backdrop"></div>
+
+    <!-- ===== ISI HALAMAN ===== -->
+    <main class="content" id="view"></main>
+  </div>
+
+  <div id="modal" class="modal noprint" hidden></div>
+  <div id="toast" class="toast noprint"></div>
+  <div id="printAll"></div>
+  <input type="file" id="filePick" hidden>
+
+  <!-- SheetJS: untuk impor/ekspor file Excel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
